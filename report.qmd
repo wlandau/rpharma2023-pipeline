@@ -1,0 +1,9 @@
+---
+title: "Results"
+format: html
+---
+
+```{r}
+library(targets)
+tar_read(results)
+```

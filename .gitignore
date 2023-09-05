@@ -1,0 +1,12 @@
+*.nfs*
+*.out
+*.Rout
+.RData
+.Rhistory
+.Rproj.user
+.Ruserdata
+_targets
+logs
+README.html
+report.html
+report_files
