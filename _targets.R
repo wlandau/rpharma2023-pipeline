@@ -1,9 +1,49 @@
+library(crew)
 library(targets)
 library(tarchetypes)
 library(tibble)
 
 tar_option_set(
-  packages = c("dplyr", "tibble")
+  packages = c("dplyr", "tibble"),
+  
+  # Locally:
+  controller = crew::crew_controller_local(workers = 4)
+  
+  # On a cluster:
+  # controller = crew.cluster::crew_controller_sge(
+  #   seconds_launch = 60,
+  #   workers = 50,
+  #   sge_cores = 4,
+  #   sge_memory_gigabytes_required = 2L,
+  #   seconds_idle = 30,
+  #   sge_log_output = "logs/",
+  #   script_lines = paste0(
+  #     "module load R/",
+  #     getRversion()
+  #   )
+  # )
+  
+  # On AWS Batch:
+  # controller = crew_controller_aws_batch(
+  #   workers = 10L,
+  #   seconds_idle = 120,
+  #   seconds_launch = 1800,
+  #   launch_max = 3L,
+  #   processes = 4,
+  #   aws_batch_job_definition = "YOUR_JOB_DEFINITION",
+  #   aws_batch_job_queue = "YOUR_JOB_QUEUE"
+  # ),
+
+  # Storage on AWS:  
+  # repository = "aws",
+  # resources = tar_resources(
+  #   aws = tar_resources_aws(
+  #     bucket = "YOUR_BUCKET",
+  #     prefix = "YOUR_PREFIX",
+  #     region = "YOUR_REGION"
+  #   )
+  # ),
+  # cue = tar_cue(file = FALSE)
 )
 
 scenarios <- tribble(
