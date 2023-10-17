@@ -7,8 +7,6 @@
 #' library(tibble)
 #' dataset <- simulate_dataset(
 #'   mean_response_drug = 2,
-#'   mean_response_placebo = 0,
-#'   standard_deviation = 1,
 #'   sample_size = 200
 #' )
 #' library(dplyr)
