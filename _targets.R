@@ -25,7 +25,7 @@ list(
     ),
     values = scenarios,
     batches = 25, # 25 dynamic targets per scenario
-    reps = 40, # 40 reps per dynamic target,
+    reps = 400, # 400 reps per dynamic target,
     names = all_of(c("efficacy", "sample_size")),
     columns = all_of(c("efficacy", "sample_size"))
   ),
