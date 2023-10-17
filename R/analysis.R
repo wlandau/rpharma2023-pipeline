@@ -9,6 +9,7 @@
 #'   mean_response_drug = 2,
 #'   sample_size = 200
 #' )
+#' dataset
 #' library(dplyr)
 #' analyze_dataset(dataset)
 analyze_dataset <- function(dataset) {
